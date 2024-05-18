@@ -1,12 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
+import './firebase/auth/firebase_auth.dart';
 
-void main() async {
+late final FirebaseApp app;
+late final FirebaseAuth auth;
+late UserCredential? credentials;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   try {
-    await Firebase.initializeApp(
+    app = await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform);
+    auth = FirebaseAuth.instanceFor(app: app);
   } catch (e) {
     print('Failed to initialize Firebase: $e');
   }
@@ -48,6 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _createUserHandler() async {
+    credentials = await createUser("mukabha99@gmail.com", "123456789");
+    // do somthing with credentials after successfully creating new user
+    print('credentials: $credentials');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,15 +80,25 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            ElevatedButton(
+              onPressed: () {
+                _createUserHandler();
+              },
+              style: ElevatedButton.styleFrom(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                textStyle: const TextStyle(fontSize: 18),
+              ),
+              child: const Text('Custom Elevated Button'),
+            ),
           ],
         ),
       ),
-
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
