@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "674878843861",
+    "project_id": "study-with-awtad",
+    "storage_bucket": "study-with-awtad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674878843861:android:9b0691d59521abdc332b5c",
+        "android_client_info": {
+          "package_name": "com.awtad.study_with_awtad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJM8O3LCXb42m5B_utOgMleTmgcrRBq3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
