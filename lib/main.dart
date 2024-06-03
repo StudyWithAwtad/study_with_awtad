@@ -62,6 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
     print('credentials: $credentials');
   }
 
+  void _createUserWithPhoneNumberHandler() async {
+    createUserWithPhoneNumber("+9720551112233");
+    // do somthing with credentials after successfully creating new user
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                _createUserHandler();
+                //_createUserHandler();
+                _createUserWithPhoneNumberHandler();
               },
               style: ElevatedButton.styleFrom(
                 padding:
