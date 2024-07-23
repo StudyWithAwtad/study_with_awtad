@@ -9,6 +9,8 @@ late final FirebaseApp app;
 late final FirebaseAuth auth;
 late UserCredential? credentials;
 
+// said commit
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
@@ -19,7 +21,6 @@ Future<void> main() async {
     print('Failed to initialize Firebase: $e');
   }
   runApp(const MyApp());
-  
 }
 
 class MyApp extends StatelessWidget {
