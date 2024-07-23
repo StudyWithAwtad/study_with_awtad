@@ -19,6 +19,7 @@ Future<void> main() async {
     print('Failed to initialize Firebase: $e');
   }
   runApp(const MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {
