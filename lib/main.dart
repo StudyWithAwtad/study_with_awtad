@@ -11,6 +11,8 @@ late final FirebaseApp app;
 late final FirebaseAuth auth;
 late UserCredential? credentials;
 
+// said commit
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
