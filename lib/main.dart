@@ -5,6 +5,8 @@ import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import './firebase/auth/firebase_auth.dart';
 
+// check org 
+
 late final FirebaseApp app;
 late final FirebaseAuth auth;
 late UserCredential? credentials;
@@ -19,7 +21,6 @@ Future<void> main() async {
     print('Failed to initialize Firebase: $e');
   }
   runApp(const MyApp());
-  
 }
 
 class MyApp extends StatelessWidget {
